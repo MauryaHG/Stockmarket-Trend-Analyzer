@@ -1,1 +1,4 @@
 FIT2101 Readme for Team30Assignment1
+ProjectInception.md
+FIT2101documents.docx
+ProjectArtifactsScreenshots.docx
