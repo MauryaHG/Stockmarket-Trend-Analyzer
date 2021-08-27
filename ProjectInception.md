@@ -1,6 +1,6 @@
 # Project Plan
 ## Team organisation (Team 30)
-### Members, Contact Information and Responsibilities:
+### Members, Contact Information, Roles and Responsibilities:
 - Brandon Choong
     - kcho0065@student.monash.edu
     - Programmer
@@ -18,20 +18,23 @@
     - Scrum Master (Week 1)
     - Tester
     - Product Designer
+    - Domain Expert
 - Maurya Gamage
     - mgam0010@student.monash.edu
     - Programmer
     - Tester
+    - Configuration Manager
+    - Domain Expert
 
 ### Contact Details
 The team has decided to utilise Discord and Zoom to keep in contact with each other and will be where all meetings are conducted. Email will be used to contact the Project Managers and the team's work will be stored on Google Drive and managed on Trello.
 
 ### Team's Process Model
-The team’s process model is a variant of Scrum. Instead of daily meetings, a meeting will be conducted every 2-3 days. The sprints will also be within a 2 week timespan. 
+The team’s process model is a variant of Scrum. Instead of daily meetings, a meeting will be conducted every 2-3 days. The sprints will also be within a 2 week timespan. Meetings are differed to Scrum in that they are longer as the team collaborates and completes tasks together during the meeting, in addition to discussing what has been done since the previous meeting, and what needs to be done before the next. 
 
 ## Time and task tracking
 ### Allocation of tasks and Progress Tracking
-After the sprint backlog has been finalised, team members will choose their own tasks to complete based on their expertise. If a task is not chosen by any team member, the Scrum master will allocate the task to one or more team members to work on. Trello and Google drive will be used for formal documentation of progress. Day-to-day progress will be discussed on Discord among team members.
+After the sprint backlog has been finalised, team members will choose their own tasks to complete based on their expertise. If a task is not chosen by any team member, the Scrum master will allocate the task to one or more team members to work on. Trello and Google drive will be used for formal documentation of progress. Day-to-day progress will be discussed on Discord among team members, and the tasks timeline will be managed on Trello.
 
 ## Definition of done and Vision statement
 ### Vision Statement
@@ -39,14 +42,63 @@ For customers of Widgets Are Us (WAU)
 Who are looking for solutions to their real world problems and business needs  
 The EveningComet  
 Is a foreign exchange consultant / advisor / forecast  
-That analyse the trends and makes suggestions based on the analysis, visualization of data, etc  
+That analyses the trends and makes suggestions based on the analysis, visualization of data, etc  
 Unlike Morningstar.  
-Our product has better visualization of data, more user friendly (easier for beginners to use), more accessible.
+Our product has better visualization of data, more user friendly (easier for beginners to use), more accessible and peronsalised.
 
 ### Definition of done
-Success completion of every task on the sprint backlog (main features, extra features could be left out).
+The definition of done to the team is the successful completion of every task on the sprint backlog (main features, extra features could be left out), and all conditions/acceptance criteria are met and satisfied so that it is ready to be accepted by the user. 
+Through regular meetings, the team will run through all the features/components completed within the sprints to ensure everything is working. In the event that an error/bug is found, the Scrum Master will organise a team member or allocate time during the meeting to fix the issue/bug.
 
 # Analysis of Alternatives
+For the analysis, many factors were taken into consideration like the knowledge of the team members in certain programming languages, how easy it was to code, how time efficiently the team can code and what type of platform the users will be using.
+The most important factors are the user platform and the programming language. For the programming language, javascript or python were the options considered and user platform would be Windows, Android or iOS. Javascript is the programming language all of the members are comfortable with and investigations show that javascript is better for web applications.
+
+## Terms of Reference
+What programming language to use?
+The team wanted to choose a programming language that preferably every single one of the team members have had experience with. The programming language should also be the appropriate language for the platform where the widget is planned to be built on.
+
+## What options have we identified?
+Two choices were considered by the team; Javascript(Node.js) and Python.
+
+## What criteria will we base our recommendations on?
+Team members experience
+Performance / Speed
+Which is better for math computations / data analytics
+Which is better for web development
+
+## Team members experience
+Every single member of our team has experience coding with Javascript, particularly in the first-year unit ENG1003. Everyone has built a web application with Javascript, HTML, and CSS. This experience would most likely aid the team if the team decides to build a web application. However, not every single member of the team has experience with building big projects using Python. Although Python is easier to learn, the lack of experience for certain members may bite us towards the end of the project where things may get more complicated.  
+Performance / Speed  
+JavaScript was built to be fast on the web. When you compare a Node.js web app to a Python app, the Node.js one is almost definitely going to be faster.
+“Python is comparatively slower in performance as it processes requests in a single flow, unlike Node.js, where advanced multithreading is possible.” https://towardsdatascience.com/python-vs-node-js-which-one-is-best-for-your-project-e98f2c63f020  
+Which is better for math computations/ data analytics?    
+JavaScript does not offer many data science packages and built-in functions compared to Python.
+With JavaScript, you would take longer to perform data science tasks and solve issues. In this case, Python is a better choice since you can easily find how-to tutorials and other tips for data science.  
+Overall, JavaScript for data science is more of an adventure, meaning that you will need to figure out most of the things on your own. While this seems interesting, people who want to perform actions quickly will probably go with using Python or R languages.
+
+Nevertheless, JavaScript also has some perks when it comes to data science:  
+It offers visualization with its D3.js, Plotly.js, and other libraries. By using them, it is easier to create impressive data visualization and dashboards.  
+The release of the Tensorflow.js library provided opportunities for people to perform machine learning with JavaScript. It is an open-source project that lets you define, test, and run machine learning models on the browser.  
+https://www.bitdegree.org/tutorials/python-vs-javascript/  
+Which is better for web development?  
+JavaScript wins in frontend development. It has the best frameworks for building modern interfaces (React, Angular, Vue). With Node.js, developers can use JavaScript to also build the server side of their applications. Thanks to JAMstack (JavaScript + APIs + markup), developers can build super-fast, beautiful web apps within very short deadlines.
+
+For a small/medium web and mobile development team on a budget and with tight deadlines, JavaScript is definitely the best option.
+https://www.stxnext.com/blog/python-vs-javascript-comparison/  
+
+The reason for using Python in web development is simple: it's an adaptable, versatile, and highly efficient programming language that offers dynamic typing capabilities. Python allows developers to create scientific applications, system applications with graphics, games, command-line utilities, web applications, and many more options.
+https://www.imaginarycloud.com/blog/why-use-python-for-web-development/
+
+## Recommendations
+Team members experience  
+Based on the team member’s experience, Javascript would be the more appropriate choice. Having everyone on the same page and understanding what each other is doing would greatly benefit the team in terms of coding remotely.
+Performance / Speed  
+If we do decide on creating a web application, Javascript would be the clear cut choice since it faster than Python in terms of performance
+Which is better for math computations/ data analytics?  
+As our widget would deal with data manipulation / data analytics, Python can prove itself to be more useful in this area. Nonetheless, Javascript is also good in data visualization, which we also plan to do a lot of.
+Which is better for web development?  
+Again, Javascript is the clear winner in this criteria. It has the best frameworks and developers can build applications within a short period of time. Although Python is versatile, its upside does not outweigh Javascript’s.
 
 # Risk Register
 | ID | Risk Description | Likelihood of the risk occuring | Impact if the risk occurs | Severity | Owner | Mitigating Action |
