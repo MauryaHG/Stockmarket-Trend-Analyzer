@@ -69,32 +69,29 @@ Which is better for web development
 
 ## Team members experience
 Every single member of our team has experience coding with Javascript, particularly in the first-year unit ENG1003. Everyone has built a web application with Javascript, HTML, and CSS. This experience would most likely aid the team if the team decides to build a web application. However, not every single member of the team has experience with building big projects using Python. Although Python is easier to learn, the lack of experience for certain members may bite us towards the end of the project where things may get more complicated.  
-Performance / Speed  
-JavaScript was built to be fast on the web. When you compare a Node.js web app to a Python app, the Node.js one is almost definitely going to be faster.
-“Python is comparatively slower in performance as it processes requests in a single flow, unlike Node.js, where advanced multithreading is possible.” https://towardsdatascience.com/python-vs-node-js-which-one-is-best-for-your-project-e98f2c63f020  
-Which is better for math computations/ data analytics?    
+
+**Performance / Speed**  
+JavaScript was built to be fast on the web. When you compare a Node.js web app to a Python app, the Node.js one is almost definitely going to be faster. Python is comparatively slower in performance as it processes requests in a single flow, unlike Node.js, where advanced multithreading is possible.
+
+**Which is better for math computations/ data analytics?**  
 JavaScript does not offer many data science packages and built-in functions compared to Python.
 With JavaScript, you would take longer to perform data science tasks and solve issues. In this case, Python is a better choice since you can easily find how-to tutorials and other tips for data science.  
+
 Overall, JavaScript for data science is more of an adventure, meaning that you will need to figure out most of the things on your own. While this seems interesting, people who want to perform actions quickly will probably go with using Python or R languages.
 
 Nevertheless, JavaScript also has some perks when it comes to data science:  
-It offers visualization with its D3.js, Plotly.js, and other libraries. By using them, it is easier to create impressive data visualization and dashboards.  
-The release of the Tensorflow.js library provided opportunities for people to perform machine learning with JavaScript. It is an open-source project that lets you define, test, and run machine learning models on the browser.  
-https://www.bitdegree.org/tutorials/python-vs-javascript/  
-Which is better for web development?  
-JavaScript wins in frontend development. It has the best frameworks for building modern interfaces (React, Angular, Vue). With Node.js, developers can use JavaScript to also build the server side of their applications. Thanks to JAMstack (JavaScript + APIs + markup), developers can build super-fast, beautiful web apps within very short deadlines.
+It offers visualization with its D3.js, Plotly.js, and other libraries. By using them, it is easier to create impressive data visualization and dashboards. The release of the Tensorflow.js library provided opportunities for people to perform machine learning with JavaScript. It is an open-source project that lets you define, test, and run machine learning models on the browser.  
 
-For a small/medium web and mobile development team on a budget and with tight deadlines, JavaScript is definitely the best option.
-https://www.stxnext.com/blog/python-vs-javascript-comparison/  
+**Which is better for web development?**  
+JavaScript wins in frontend development. It has the best frameworks for building modern interfaces (React, Angular, Vue). With Node.js, developers can use JavaScript to also build the server side of their applications. Thanks to JAMstack (JavaScript + APIs + markup), developers can build super-fast, beautiful web apps within very short deadlines. For a small/medium web and mobile development team on a budget and with tight deadlines, JavaScript is definitely the best option.
 
 The reason for using Python in web development is simple: it's an adaptable, versatile, and highly efficient programming language that offers dynamic typing capabilities. Python allows developers to create scientific applications, system applications with graphics, games, command-line utilities, web applications, and many more options.
-https://www.imaginarycloud.com/blog/why-use-python-for-web-development/
 
 ## Recommendations
 Team members experience  
 Based on the team member’s experience, Javascript would be the more appropriate choice. Having everyone on the same page and understanding what each other is doing would greatly benefit the team in terms of coding remotely.
 Performance / Speed  
-If we do decide on creating a web application, Javascript would be the clear cut choice since it faster than Python in terms of performance
+If we do decide on creating a web application, Javascript would be the clear cut choice since it faster than Python in terms of performance.
 Which is better for math computations/ data analytics?  
 As our widget would deal with data manipulation / data analytics, Python can prove itself to be more useful in this area. Nonetheless, Javascript is also good in data visualization, which we also plan to do a lot of.
 Which is better for web development?  
