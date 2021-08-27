@@ -55,7 +55,7 @@ For the analysis, many factors were taken into consideration like the knowledge 
 The most important factors are the user platform and the programming language. For the programming language, javascript or python were the options considered and user platform would be Windows, Android or iOS. Javascript is the programming language all of the members are comfortable with and investigations show that javascript is better for web applications.
 
 ## Terms of Reference
-What programming language to use?
+**What programming language to use?**  
 The team wanted to choose a programming language that preferably every single one of the team members have had experience with. The programming language should also be the appropriate language for the platform where the widget is planned to be built on.
 
 ## What options have we identified?
@@ -96,6 +96,42 @@ Which is better for math computations/ data analytics?
 As our widget would deal with data manipulation / data analytics, Python can prove itself to be more useful in this area. Nonetheless, Javascript is also good in data visualization, which we also plan to do a lot of.
 Which is better for web development?  
 Again, Javascript is the clear winner in this criteria. It has the best frameworks and developers can build applications within a short period of time. Although Python is versatile, its upside does not outweigh Javascript’s.
+
+## Terms of Reference
+**What platform to use?**  
+We want to choose a platform that is easy to create using our chosen programming language. The platform should be able to store our user’s data.
+
+**What options have we identified?** 
+We have two choices, web application and mobile app.
+
+**What criteria will we base our recommendations on?**
+Team members experience  
+Connectivity and speed  
+Which is easier to develop  
+Security  
+
+## Team members experience
+Every single member of the team has done ENG1003, in which we had to create a web application using Javascript, HTML, and CSS. This experience would prove useful if we do decide to build a web application. As for mobile apps, no one in the team has had experience in building one. If we choose to build one it may be more challenging and time consuming.
+Connectivity and speed
+There are mobile applications that allow us to access information at any time and from nearly any location. Connectivity and operating speed are closely linked, and mobile apps often run 1.5 times quicker than online apps. It is due to their functioning being incorporated into the gadget's features, as well as the device storing data locally.
+
+Web applications, on the other hand, run slowly because they require a web server to process client requests. They also require an application server to do those tasks, as well as a database to store information. Because web applications are read from a browser, they cannot function without an internet connection.
+Which is easier to develop
+Mobile applications are more expensive to build than web apps, and because they are platform-specific, releasing an app across several platforms almost always requires starting from scratch in terms of design and development.  
+Compared to mobile apps, web apps are usually quicker and easier to build—but they are much simpler in terms of features
+
+## Security
+Because mobile apps must be downloaded through an app store, it ensures that an app has been screened by Google or Apple and is therefore secure and compatible with a device. On the contrary, web apps are loaded from the internet browser which means that safety and security are not guaranteed.
+
+## Recommendations
+Team members experience  
+Based on the team member’s experience, creating a web application would be the appropriate choice since everyone has experience developing one.
+Connectivity and speed  
+Mobile applications are both faster and can be used without internet connection so it wins in this criteria.
+Which is easier to develop  
+Web applications are generally faster and easier to develop, this is useful for the team to ensure we deliver a working product on time.
+Security  
+Mobile applications are generally more secure, this is because the mobile apps need to be downloaded through an app store or a google play store, therefore it has been screened. Meanwhile, a web application does not have this screening, making its safety and security not as guaranteed.
 
 # Risk Register
 | ID | Risk Description | Likelihood of the risk occuring | Impact if the risk occurs | Severity | Owner | Mitigating Action |
