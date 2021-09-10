@@ -3,11 +3,11 @@ Sprint 1
 - Html File skeletons (Brandon and William)
 - API implementation (Pashalis and Maurya)
 - Homepage and dropdown menu + Navigation (Button) (Brandon and William)
-- Logo (Team, hosted by Willaim)
+- Logo (Team, hosted by William)
 - Currency Listings Table (Pashalis and Maurya)
 
 Agreement to Sprint 1
 Brandon - I agree to this WBA
 Pashalis - I agree to this WBA
-William - 
+William - I agree to this WBA
 Maurya -
