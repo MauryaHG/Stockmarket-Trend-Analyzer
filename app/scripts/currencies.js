@@ -1,19 +1,26 @@
-var requestURL = 'https://api.exchangerate.host/fluctuation?start_date=2020-01-01&end_date=2020-01-04&base=USD';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
 
-request.onload = function() {
+    document.getElementById("getTable").onclick = function() {getTable()};
+
+
+function getTable(){
+
+    let start_date = document.getElementById('start').value;
+    let end_date = document.getElementById('end').value;
+    let listHTML = "";
+
+    var requestURL = 'https://api.exchangerate.host/fluctuation?start_date='+start_date+'&end_date='+end_date+'&base=USD'
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+
     var response = request.response;
     var tableRef = document.getElementById('currencyTable');
-    console.log(response);
-    console.log(response.rates);
+    tableRef.innerHTML = listHTML;
 
 
-  let listHTML = "";
-  let start_date = '2020/01/01';
-  let end_date='2020/01/04';
+
 
    for (var prop in response.rates)	{
 	    if (prop != 'USD') {
@@ -39,4 +46,5 @@ request.onload = function() {
 	};
 	tableRef.innerHTML += listHTML;
 
+}
 }
