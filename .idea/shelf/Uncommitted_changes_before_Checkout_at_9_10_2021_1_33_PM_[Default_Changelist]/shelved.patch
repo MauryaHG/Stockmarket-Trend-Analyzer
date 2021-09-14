@@ -1,0 +1,132 @@
+Index: scripts/currencies.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var requestURL = 'https://api.exchangerate.host/fluctuation?start_date=2020-01-01&end_date=2020-01-04&base=USD';\r\nvar request = new XMLHttpRequest();\r\nrequest.open('GET', requestURL);\r\nrequest.responseType = 'json';\r\nrequest.send();\r\n\r\nrequest.onload = function() {\r\n    var response = request.response;\r\n    var tableRef = document.getElementById('currencyTable');\r\n    console.log(response);\r\n    console.log(response.rates);\r\n\r\n\r\n  let listHTML = \"\";\r\n  let start_date = '2020/01/01';\r\n  let end_date='2020/01/04';\r\n\r\n   for (var prop in response.rates)\t{\r\n\t    if (prop != 'USD') {\r\n            currency = response.rates[prop]\r\n            let currencyName = prop;\r\n            let startRate = currency.start_rate;\r\n            let endRate = currency.end_rate;\r\n            let change = currency.change;\r\n            if (change < 0){\r\n                color = \"red\"\r\n            } else {\r\n                color = \"green\"\r\n            }\r\n            let date = start_date +\" to \" + end_date;\r\n\r\n\r\n\tlistHTML += \"<tr> <td class=\\\"full-width mdl-data-table__cell--non-numeric\\\">\" + currencyName + \"</td>\"\r\n\t\t\t + \t\"<td class=\\\"full-width mdl-data-table__cell\\\">\" + startRate + \"</td>\"\r\n\t\t\t + \t\"<td class=\\\"full-width mdl-data-table__cell\\\">\" + endRate + \"</td>\"\r\n\t\t\t + \t\"<td class=\\\"full-width mdl-data-table__cell\\\"><font color=\"+ color +\">\" + change + \"</font></td>\"\r\n\t\t\t + \t\"<td class=\\\"full-width mdl-data-table__cell--non-numeric\\\">\" + date + \"</td></tr>\";\r\n\t};\r\n\t};\r\n\ttableRef.innerHTML += listHTML;\r\n\r\n}\r\naaaa
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/scripts/currencies.js b/scripts/currencies.js
+--- a/scripts/currencies.js	
++++ b/scripts/currencies.js	
+@@ -1,19 +1,26 @@
+-var requestURL = 'https://api.exchangerate.host/fluctuation?start_date=2020-01-01&end_date=2020-01-04&base=USD';
+-var request = new XMLHttpRequest();
+-request.open('GET', requestURL);
+-request.responseType = 'json';
+-request.send();
+-
+-request.onload = function() {
++
++    document.getElementById("getDate").onclick = function() {getTable()};
++
++
++function getTable(){
++
++    let start_date = document.getElementById('start').value;
++    let end_date = document.getElementById('end').value;
++    let listHTML = "";
++
++    var requestURL = 'https://api.exchangerate.host/fluctuation?start_date='+start_date+'&end_date='+end_date+'&base=USD'
++    var request = new XMLHttpRequest();
++    request.open('GET', requestURL);
++    request.responseType = 'json';
++    request.send();
++    request.onload = function() {
++
+     var response = request.response;
+     var tableRef = document.getElementById('currencyTable');
+-    console.log(response);
+-    console.log(response.rates);
++    tableRef.innerHTML = listHTML;
+ 
+ 
+-  let listHTML = "";
+-  let start_date = '2020/01/01';
+-  let end_date='2020/01/04';
++
+ 
+    for (var prop in response.rates)	{
+ 	    if (prop != 'USD') {
+@@ -40,4 +47,4 @@
+ 	tableRef.innerHTML += listHTML;
+ 
+ }
+-aaaa
+\ No newline at end of file
++}
+\ No newline at end of file
+Index: currencies.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>Currencies Listings</title>\r\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\r\n    <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.deep_orange-orange.min.css\" />\r\n    <script defer src=\"https://code.getmdl.io/1.3.0/material.min.js\"></script>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"styles/main.css\">\r\n  </head>\r\n  <body>\r\n    <div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\r\n      <header class=\"mdl-layout__header\">\r\n        <div class=\"mdl-layout__header-row\">\r\n          <span class=\"mdl-layout-title\">Currency Listings\r\n            <!-- Accent-colored raised button -->\r\n            <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"location.href='homepage.html'\">\r\n            Home\r\n            </button>\r\n          </span>\r\n          <div class=\"mdl-layout-spacer\"></div> \r\n        </div>\r\n      </header>\r\n      <div>\r\n\r\n\r\n  <main class=\"mdl-layout__content\" id=\"maintable\">\r\n\r\n      <label for=\"start\">Start date:</label>\r\n        <input type=\"date\" id=\"start\" name=\"trip-start\"\r\n                value=\"2018-09-10\"\r\n                min=\"2000-01-01\" max=\"2021-12-31\">\r\n\r\n      <label for=\"end\">End date:</label>\r\n        <input type=\"date\" id=\"end\" name=\"trip-end\"\r\n                value=\"2018-09-11\"\r\n                min=\"2000-01-01\" max=\"2021-12-31\">\r\n\r\n      <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"getdate()\">Table</button>\r\n\r\n          <div class=\"page-content\">\r\n            <div class=\"mdl-grid\">\r\n              <div class=\"scrollable\" id=\"scrollable\">\r\n                <table class=\"mdl-data-table mdl-js-data-table mdl-data-table-2dp\"  id=\"table\">\r\n                    <thead>\r\n                        <tr>\r\n                            <th class=\"mdl-data-table__cell--non-numeric\">Currency</th>\r\n                            <th class=\"mdl-data-table__cell--non-numeric\">Start Rate</th>\r\n                            <th class=\"mdl-data-table__cell--non-numeric\">End rate</th>\r\n                            <th class=\"mdl-data-table__cell--non-numeric\">Change</th>\r\n                            <th class=\"mdl-data-table__cell--non-numeric\">Date</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody id=\"currencyTable\">\r\n                    </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </div>\r\n  </main>\r\n\r\n      </div>\r\n      <div class=\"mdl-layout__drawer\">\r\n        <nav class=\"mdl-navigation\">\r\n          <a class=\"mdl-navigation__link\" href=\"charts.html\">Charts</a>\r\n          <a class=\"mdl-navigation__link\" href=\"conversion.html\">Conversion</a>\r\n          <a class=\"mdl-navigation__link\" href=\"consultant.html\">Consultant</a>\r\n        </nav>\r\n      </div>\r\n    </div>\r\n    <script src=\"scripts/homepage.js\"></script>\r\n    <script src=\"scripts/currencies.js\"></script>\r\n    <script src=\"scripts/shared.js\"></script>\r\n  </body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/currencies.html b/currencies.html
+--- a/currencies.html	
++++ b/currencies.html	
+@@ -28,7 +28,7 @@
+ 
+       <label for="start">Start date:</label>
+         <input type="date" id="start" name="trip-start"
+-                value="2018-09-10"
++                value="2015-09-10"
+                 min="2000-01-01" max="2021-12-31">
+ 
+       <label for="end">End date:</label>
+@@ -36,7 +36,7 @@
+                 value="2018-09-11"
+                 min="2000-01-01" max="2021-12-31">
+ 
+-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="getdate()">Table</button>
++      <button id="getDate"class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="getdate()">Table</button>
+ 
+           <div class="page-content">
+             <div class="mdl-grid">
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fb884b4d-54cd-4b2f-b628-a3415ad7a9aa\" name=\"Default Changelist\" comment=\"Created basic table to display currencies\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_9_2021_11_32_AM__Default_Changelist_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_9_2021_11_32_AM__Default_Changelist_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/currencies.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/currencies.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Merge.Settings\">\r\n    <option name=\"BRANCH\" value=\"Maurya\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"master\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xFahtRgjiP2xePXksrQbwBrBd7\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../ass 1/gitproject\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Assignment_02(Maurya-31309615)\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"wric0003\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/../../FIT2004 Algorithms and data structures/ass2\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/../../FIT2004 Algorithms and data structures/ass2/Assignment_02(Maurya-31309615).py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.Assignment_02(Maurya-31309615)\" />\r\n        <item itemvalue=\"Python.Assignment_02(Maurya-31309615)\" />\r\n        <item itemvalue=\"Python.Assignment_02(Maurya-31309615)\" />\r\n        <item itemvalue=\"Python.Assignment_02(Maurya-31309615)\" />\r\n        <item itemvalue=\"Python.Assignment_02(Maurya-31309615)\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fb884b4d-54cd-4b2f-b628-a3415ad7a9aa\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1629953412399</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1629953412399</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"test commit\">\r\n      <created>1631161791152</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631161791152</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Created basic table to display currencies &#10;changes made to :&#10;shared.js and currencies.html\">\r\n      <created>1631167501296</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631167501296</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Revert &quot;Created basic table to display currencies changes made to : shared.js and currencies.html&quot;&#10;&#10;This reverts commit ae68e5af\">\r\n      <created>1631167669856</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631167669856</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Created basic table to display currencies\">\r\n      <created>1631168075869</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631168075869</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Created basic table to display currencies\">\r\n      <created>1631168099114</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1631168099114</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"test commit\" />\r\n    <MESSAGE value=\"Created basic table to display currencies &#10;changes made to :&#10;shared.js and currencies.html\" />\r\n    <MESSAGE value=\"Revert &quot;Created basic table to display currencies changes made to : shared.js and currencies.html&quot;&#10;&#10;This reverts commit ae68e5af\" />\r\n    <MESSAGE value=\"Created basic table to display currencies\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Created basic table to display currencies\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -2,9 +2,9 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="fb884b4d-54cd-4b2f-b628-a3415ad7a9aa" name="Default Changelist" comment="Created basic table to display currencies">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_9_2021_11_32_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_9_2021_11_32_AM__Default_Changelist_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/currencies.html" beforeDir="false" afterPath="$PROJECT_DIR$/currencies.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/scripts/currencies.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/currencies.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -121,7 +121,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1631168099114</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="test">
++      <created>1631256520417</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1631256520417</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -153,6 +160,7 @@
+     <MESSAGE value="Created basic table to display currencies &#10;changes made to :&#10;shared.js and currencies.html" />
+     <MESSAGE value="Revert &quot;Created basic table to display currencies changes made to : shared.js and currencies.html&quot;&#10;&#10;This reverts commit ae68e5af" />
+     <MESSAGE value="Created basic table to display currencies" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Created basic table to display currencies" />
++    <MESSAGE value="test" />
++    <option name="LAST_COMMIT_MESSAGE" value="test" />
+   </component>
+ </project>
+\ No newline at end of file
