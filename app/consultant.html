@@ -25,9 +25,9 @@
         <!-- Numeric Textfield with Floating Label -->
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="budget">
+            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="budget" min="50" max="10000" step="0.01">
             <label class="mdl-textfield__label" for="budget">Enter Budget</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
+            <span class="mdl-textfield__error">Invalid input! (Budget must be between 50-10000 USD)</span>
           </div>
         </form>
       </div>
@@ -45,7 +45,7 @@
                     <thead>
                         <tr>
                             <th class="mdl-data-table__cell--non-numeric">Currency</th>
-                            <th class="mdl-data-table__cell--non-numeric">Change</th>
+                            <th class="mdl-data-table__cell--non-numeric">Change (%)</th>
                             <th class="mdl-data-table__cell--non-numeric">Date</th>
                             <th class="mdl-data-table__cell--non-numeric">Budget (USD)</th>
                         </tr>
@@ -63,7 +63,7 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="charts.html">Charts</a>
           <a class="mdl-navigation__link" href="conversion.html">Conversion</a>
-          <a class="mdl-navigation__link" href="consultant.html">Consultant</a>
+          <a class="mdl-navigation__link" href="currencies.html">Currencies</a>
         </nav>
       </div>
     </div>
