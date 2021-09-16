@@ -9,8 +9,10 @@ function sortDataByPercentageChange(data) {
 }
 
 
+
 function getTable() {
 
+    let budget = document.getElementById("budget").value;
     let date = new Date();
     date.setDate(date.getDate() - 30);
     let start_date_string = date.toISOString().split('T')[0];
@@ -47,14 +49,18 @@ function getTable() {
 
         sortDataByPercentageChange(list);
 
-        for (let i = 0; i < list.length; i++) {
+        let budgetPercentages = [30, 18, 10, 9, 8, 7, 6, 5, 4, 3];
+
+        for (let i = 0; i < 10; i++) {
             currency = list[i].currency;
             change = list[i].percentageChange;
             color = list[i].changeColor
             let date = start_date_string +" to " + end_date_string;
+            budgetAllocated = budget * budgetPercentages[i] / 100;
             listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currency + "</td>"
                 + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td>"
-                + 	"<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td></tr>";
+                + 	"<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td>"
+                + "<td class=\"full-width mdl-data-table__cell\">" + "$" +budgetAllocated + "</td></tr>";
         }
         tableRef.innerHTML += listHTML;
     }
