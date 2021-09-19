@@ -18,15 +18,16 @@ body.dark {
 	background: #292C35;
 }
 
+
 body.dark p {
     color: #fff
 }
 
 .checkbox {
-	opacity: 0;
+	opacity: 100;
 	position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 15px;
 }
 
 .label {
