@@ -51,17 +51,23 @@ function getTable() {
             sortDataByPercentageChange(list);
 
             let budgetPercentages = [30, 18, 10, 9, 8, 7, 6, 5, 4, 3];
-
-            for (let i = 0; i < 10; i++) {
-                currency = list[i].currency;
+            
+            i = 0
+            j = 0
+            while (j < 10) {
                 change = list[i].percentageChange;
-                color = list[i].changeColor
-                let date = start_date_string + " to " + end_date_string;
-                budgetAllocated = (budget * budgetPercentages[i] / 100).toFixed(2);
-                listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currency + "</td>"
+                if (change < 100){
+                    currency = list[i].currency;
+                    color = list[i].changeColor
+                    let date = start_date_string + " to " + end_date_string;
+                    budgetAllocated = (budget * budgetPercentages[j] / 100).toFixed(2);
+                    listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currency + "</td>"
                     + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td>"
                     + "<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td>"
                     + "<td class=\"full-width mdl-data-table__cell\">" + "$" + budgetAllocated + "</td></tr>";
+                    j++;
+                } 
+                i++;
             }
             tableRef.innerHTML += listHTML;
         }
