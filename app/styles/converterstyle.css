@@ -13,7 +13,7 @@ body{
     width: 450px;
 }
 h1{
-    color: #364547;
+    color: rgb(226, 121, 0);
     margin-bottom: 0.5em;
 }
 .container .box{
@@ -36,7 +36,7 @@ select{
     border-radius: 10px;
     border: none;
 }
-input{
+.box input{
     width: 95%;
     height: 40px;
     font-size: 1em;
