@@ -1,3 +1,21 @@
-.date_input{
-    font-color: rgb(226, 121, 0);
+.container input:checked ~ .checkmark {
+    background-color: #142f46;
+
 }
+body.dark label  {
+    color: #fff
+}
+
+.date{
+    color: rgb(0, 0, 0);
+}
+
+body.dark tbody{
+    color: rgb(255, 255, 255);
+    background-color: #292C35;
+} 
+
+body.dark th{
+    color: rgb(255, 255, 255);
+    background-color: #292C35;
+} 

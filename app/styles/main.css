@@ -23,6 +23,7 @@ body.dark p {
     color: #fff
 }
 
+
 .checkbox {
 	opacity: 100;
 	position: absolute;
@@ -62,9 +63,12 @@ body.dark p {
 
 
 .fa-moon {
-	color: #f1c40f;
+	color: #5a4a0a;
 }
 
 .fa-sun {
 	color: #f39c12;
 }
+
+
+
