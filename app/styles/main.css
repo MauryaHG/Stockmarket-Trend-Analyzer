@@ -70,5 +70,12 @@ body.dark p {
 	color: #f39c12;
 }
 
+<<<<<<< HEAD
 
 
+=======
+.center {
+    margin: 10px auto 20px;
+    display: block;
+}
+>>>>>>> 0a20f82787db29a25444c1d82e5c2d205389b1be
