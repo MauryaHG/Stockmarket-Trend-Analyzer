@@ -68,3 +68,8 @@ body.dark p {
 .fa-sun {
 	color: #f39c12;
 }
+
+.center {
+    margin: 10px auto 20px;
+    display: block;
+}
