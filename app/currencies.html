@@ -7,7 +7,6 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/currencies.css">
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -52,11 +51,10 @@
                 <table class="table mdl-data-table mdl-js-data-table mdl-data-table-2dp"  id="table">
                     <thead>
                         <tr>
-                            <th class="mdl-data-table__cell--non-numeric">Currency</th>
-                            <th class="mdl-data-table__cell--non-numeric">Start Rate</th>
-                            <th class="mdl-data-table__cell--non-numeric">End rate</th>
-                            <th class="mdl-data-table__cell--non-numeric">Change</th>
-                            <th class="mdl-data-table__cell--non-numeric">Date</th>
+                            <th class="mdl-data-table__cell--non-numeric" onclick="sortTable(0)">Currency</th>
+                            <th class="mdl-data-table__cell--non-numeric" onclick="sortNumTable(1)">Start Rate</th>
+                            <th class="mdl-data-table__cell--non-numeric" onclick="sortNumTable(2)">End rate</th>
+                            <th class="mdl-data-table__cell--non-numeric" onclick="sortNumTable(3)">Change</th>
                         </tr>
                     </thead>
                     <tbody id="currencyTable">
@@ -96,7 +94,6 @@
       document.getElementById("end").setAttribute("max", today);
       document.getElementById("end").setAttribute("value", today);
   </script>
-    <script src="scripts/homepage.js"></script>
     <script src="scripts/currencies.js"></script>
     <script src="scripts/shared.js"></script>
   </body>
