@@ -1,10 +1,11 @@
+var stockChart = 0
 window.onload = function () {
 
     const old_date = new Date();
     old_date.setFullYear(old_date.getFullYear()-1)
     const date_str = old_date.toISOString().substring(0, 10);
     var dps1 = [], dps2= [];
-    var stockChart = new CanvasJS.StockChart("chartContainer",{
+    stockChart = new CanvasJS.StockChart("chartContainer",{
         theme: "light2",
         animationEnabled: true,
         title:{
@@ -48,8 +49,6 @@ window.onload = function () {
             dps1.push({x: new Date(date), y: Number(date_rate.AUD)});
             dps2.push({x: new Date(date), y: Number(date_rate.AUD)});
         }
-        console.log(dps1)
-        console.log(dps2)
         stockChart.render();
 	});
 }
