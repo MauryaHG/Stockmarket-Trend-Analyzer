@@ -75,7 +75,7 @@ function getTable() {
                     totalThreeMonth += parseFloat(budgetThreeMonth);
                     listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currency + "</td>"
                     + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td>"
-                    + "<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td>"
+                    /*+ "<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td>"*/
                     + "<td class=\"full-width mdl-data-table__cell\">" + "$" + budgetAllocated + "</td>"
                     + "<td class=\"full-width mdl-data-table__cell\">" + "$" + budgetOneMonth + "</td>"
                     + "<td class=\"full-width mdl-data-table__cell\">" + "$" + budgetTwoMonth + "</td>"
@@ -86,14 +86,12 @@ function getTable() {
             }
             listHTML += "<tr> <td class=\"full-width mdl-data-table__cell\">" + "Total" + "</td>"
             + "<td class=\"full-width mdl-data-table__cell\">" + "" + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "" + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + total + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalOneMonth + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalTwoMonth + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalThreeMonth + "</td></tr>";
+            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + total.toFixed(2) + "</td>"
+            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalOneMonth.toFixed(2) + "</td>"
+            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalTwoMonth.toFixed(2) + "</td>"
+            + "<td class=\"full-width mdl-data-table__cell\">" + "$" + totalThreeMonth.toFixed(2) + "</td></tr>";
 
-            listHTML += "<tr> <td class=\"full-width mdl-data-table__cell\">" + "Profits" + "</td>"
-            + "<td class=\"full-width mdl-data-table__cell\">" + "" + "</td>"
+            listHTML += "<tr> <td class=\"full-width mdl-data-table__cell\">" + "Net Profit" + "</td>"
             + "<td class=\"full-width mdl-data-table__cell\">" + "" + "</td>"
             + "<td class=\"full-width mdl-data-table__cell\">" + "$" + (total - budget).toFixed(2) + "</td>"
             + "<td class=\"full-width mdl-data-table__cell\">" + "$" + (totalOneMonth - budget).toFixed(2) + "</td>"

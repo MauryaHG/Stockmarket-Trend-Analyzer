@@ -3,40 +3,41 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container{
+.container {
     width: 450px;
 }
-h1{
-    color: rgb(226, 121, 0);
+h3 {
+    color: #364547;
     margin-bottom: 0.5em;
 }
-.container .box{
+.container .box {
     width: 100%;
     display: flex;
 }
-.box div{
+.box div {
     width: 100%;
 }
-select{
+select {
     width: 95%;
     height: 40px;
     font-size: 1em;
     cursor: pointer;
     outline: none;
-    background: #ff950a;
+    background: #3868ee;
     color: white;
     margin: 0.2em 0;
     padding: 0 1em;
     border-radius: 10px;
     border: none;
 }
-.box input{
+
+.box input {
     width: 95%;
     height: 40px;
     font-size: 1em;
@@ -47,7 +48,7 @@ select{
     outline: none;
     padding: 0 1em;
 }
-.btn{
+.btn {
     width: 98%;
     height: 40px;
     background: #364547;
