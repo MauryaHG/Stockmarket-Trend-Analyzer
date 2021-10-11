@@ -23,12 +23,19 @@ body.dark p {
     color: #fff
 }
 
+body.dark b {
+	color: #fff
+}
+
+h3 {
+	color: #3868ee
+}
 
 .checkbox {
 	opacity: 100;
 	position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 17px;
+    right: 22px;
 }
 
 .label {
@@ -96,3 +103,11 @@ body.dark th{
     color: rgb(255, 255, 255);
     background-color: #292C35;
 } 
+
+.mdl-textfield__input{
+    border-bottom: 1px solid #3868ee;
+}
+
+.mdl-textfield__label.dark {
+    color: rgb(255, 255, 255);
+}
