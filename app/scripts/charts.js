@@ -23,7 +23,6 @@ window.onload = function () {
       el.value = opt[0];
       select.appendChild(el);
     }
-    console.log(select)
   }
   
 }
@@ -76,5 +75,24 @@ document.getElementById('selectCurrency').addEventListener('change', function() 
             dps2.push({x: new Date(date), y: Number(date_rate[curr_val])});
         }
         stockChart.render();
+        trend(dps1)
 	});
+
+  function trend(data) {
+    console.log(data)
+    start_rate = data[0]["y"]
+    end_rate = data[data.length - 1]["y"]
+    console.log(start_rate)
+    console.log(end_rate)
+    if (end_rate-start_rate < 0){
+      console.log(document.getElementById("trend"))
+      document.getElementById("trend").innerHTML = "down"
+      console.log("down")
+    }else {
+      document.getElementById("trend").innerHTML = "up"
+      console.log("up")
+    }
+  }
+
+
 });

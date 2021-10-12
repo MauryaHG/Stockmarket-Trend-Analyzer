@@ -29,3 +29,20 @@ select{
     border-radius: 10px;
     border: none;
 }
+
+#trend-card{
+    padding-top: 575px;
+    padding-left: 25%;
+}
+.demo-card-wide.mdl-card {
+    width: 512px;
+    
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: rgb(24, 4, 4);
+    height: 176px;
+    
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: rgb(59, 11, 11);
+  }
