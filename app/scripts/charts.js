@@ -84,13 +84,13 @@ document.getElementById('selectCurrency').addEventListener('change', function() 
     end_rate = data[data.length - 1]["y"]
     console.log(start_rate)
     console.log(end_rate)
-    if (end_rate-start_rate < 0){
+    if (end_rate/start_rate < 1){
       console.log(document.getElementById("trend"))
-      document.getElementById("trend").innerHTML = "down"
-      console.log("down")
+      document.getElementById("trend").innerHTML = "As we can see, accoring to the chart, eventhough there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year."
+      console.log("As we can see, accoring to the chart, eventhough there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year.")
     }else {
-      document.getElementById("trend").innerHTML = "up"
-      console.log("up")
+      document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year."
+      console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year.")
     }
   }
 
