@@ -1,70 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Charts</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css" />
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/charts.css">
-  </head>
 
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<head>
+  <title>Charts</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/charts.css">
+</head>
 
-      <header class="mdl-layout__header">
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-        <div class="mdl-layout__header-row">
-          <!-- Logo Home Button -->
-          <button class="mdl-button mdl-js-button" onclick="location.href='homepage.html'">
-            <img src="EveningCometLogo.png" alt="Home Logo" width=70 height=39>
-          </button>
-          <span class="mdl-layout-title">Charts
-          </span>
-          <div class="mdl-layout-spacer"></div> 
-        </div>
-        
-        <div class="checkbox">
-          <input type="checkbox" class="checkbox" id="chk" />
-          <label class="label" for="chk">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <div class="ball"></div>
-          </label>
-        </div>
+    <header class="mdl-layout__header">
 
-      </header>
-      <div class = "content" style="width: 100%;">
+      <div class="mdl-layout__header-row">
+        <!-- Logo Home Button -->
+        <button class="mdl-button mdl-js-button" onclick="location.href='homepage.html'">
+          <img src="EveningCometLogo.png" alt="Home Logo" width=70 height=39>
+        </button>
+        <span class="mdl-layout-title">Charts
+        </span>
+        <div class="mdl-layout-spacer"></div>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
+
+    </header>
+    <div class="content" style="width: 100%;">
+      <div class="container">
+        <h3><b>Chartsssss</b></h3>
         <div class="box">
           <div class="left_box">
-              <select name="currencyDrop" class="currency" id="selectCurrency" ></select>
+            <select id="selectCurrencyone" name="currency" class="currency"></select>
           </div>
-        </div>
-        <br><br>
-        <div id="chartContainer" style="width: 100%;"></div>
-        <br><br>
-        <div id="trend-card">
-          <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-              <h2 class="mdl-card__title-text">Welcome</h2>
-            </div>
-            <div id="trend" class="mdl-card__supporting-text">
-              shrek
-            </div>
+          <div class="right_box">
+            <select id="selectCurrencytwo" name="currency" class="currency">
+              <option value="" selected disabled hidden>Choose here to compare</option>
+            </select>
           </div>
         </div>
       </div>
-
-      <div class="mdl-layout__drawer">
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="conversion.html">Conversion</a>
-          <a class="mdl-navigation__link" href="consultant.html">Consultant</a>
-          <a class="mdl-navigation__link" href="currencies.html">Currencies</a>
-        </nav>
+      <br><br>
+      <div class="grid-container">
+        <div class="grid-item" id="chartContainer" ></div>
+        <br><br>
+        <div class="grid-item" id="chartContainertwo"></div>
       </div>
-
+      <div id="trend-card">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Welcome</h2>
+          </div>
+          <div id="trend" class="mdl-card__supporting-text">
+            shrek
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="mdl-layout__drawer">
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="conversion.html">Conversion</a>
+        <a class="mdl-navigation__link" href="consultant.html">Consultant</a>
+        <a class="mdl-navigation__link" href="currencies.html">Currencies</a>
+      </nav>
+    </div>
+
+  </div>
 
 </body>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
@@ -72,4 +84,5 @@
 <script src="scripts/homepage.js"></script>
 <script src="scripts/charts.js"></script>
 <script src="scripts/shared.js"></script>
+
 </html>

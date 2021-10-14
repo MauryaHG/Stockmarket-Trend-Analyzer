@@ -1,5 +1,8 @@
 const chk = document.getElementById('chk');
 var watchlistHTML = JSON.parse(sessionStorage.getItem("key"));
+if (watchlistHTML == null){
+	watchlistHTML = [];
+}
 
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');

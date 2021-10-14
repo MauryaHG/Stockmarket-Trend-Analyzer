@@ -6,7 +6,6 @@
 body{
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: top;
 }
 .container .box{
@@ -45,4 +44,11 @@ select{
   }
   .demo-card-wide > .mdl-card__menu {
     color: rgb(59, 11, 11);
+  }
+
+  .grid-container {
+    display: grid;
+    row-gap:  1px;
+    height: 100vh;
+    grid-template-rows: 500px 500px;
   }

@@ -137,7 +137,9 @@ function getTableWatchlist() {
     let start_date_string = date.toISOString().split('T')[0];
     let end_date_string = new Date().toISOString().split('T')[0];
     let listHTML = "";
+    console.log(curr)
     var curr_set = curr.join(',')
+    console.log(curr_set)
     var requestURL = 'https://api.exchangerate.host/fluctuation?start_date=' + start_date_string + '&end_date=' + end_date_string + '&base=USD&symbols='+ curr_set;
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
