@@ -92,8 +92,8 @@ document.getElementById('selectCurrency').addEventListener('change', function ()
       document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year."
       console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year.")
     } else {
-      document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year."
-      console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year.")
+      document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.."
+      console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.")
     }
   }
 
