@@ -25,22 +25,25 @@ function getTable() {
         for (var prop in response.rates) {
             if (prop != 'USD') {
                 currency = response.rates[prop]
-                let currencyName = prop;
-                let startRate = currency.start_rate;
-                let endRate = currency.end_rate;
-                let change = currency.change;
-                if (change < 0) {
-                    color = "red"
-                } else {
-                    color = "green"
+                if (prop != 'BTC'){
+                    let currencyName = prop;
+                    let startRate = currency.start_rate;
+                    let endRate = currency.end_rate;
+                    let change = currency.change;
+                    if (change < 0) {
+                        color = "red"
+                    } else {
+                        color = "green"
+                    }
+                    let date = start_date + " to " + end_date;
+
+
+                    listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currencyName + "</td>"
+                        + "<td class=\"full-width mdl-data-table__cell\">" + startRate + "</td>"
+                        + "<td class=\"full-width mdl-data-table__cell\">" + endRate + "</td>"
+                        + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td></tr>";
                 }
-                let date = start_date + " to " + end_date;
 
-
-                listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currencyName + "</td>"
-                    + "<td class=\"full-width mdl-data-table__cell\">" + startRate + "</td>"
-                    + "<td class=\"full-width mdl-data-table__cell\">" + endRate + "</td>"
-                    + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td></tr>";
             };
         };
         tableRef.innerHTML += listHTML;
