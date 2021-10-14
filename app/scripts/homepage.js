@@ -1,4 +1,4 @@
-window.onload = function () { getTableOne(), getTableTwo(), getTableWatchlist };
+window.onload = function () { getTableOne(), getTableTwo(), getTableWatchlist() };
 
 function sortDataByPercentageChange(data) {
     let sortedData;
@@ -128,8 +128,47 @@ function getTableTwo() {
 }
 
 function getTableWatchlist() {
-    var tableRef = document.getElementById('watchlist');
-    console.log(watchlistHTML);
-    tableRef.innerHTML = watchlistHTML;
 
+    var tableRef = document.getElementById('watchlist');
+    var curr = JSON.parse(sessionStorage.getItem("key"));
+
+    let date = new Date();
+    date.setDate(date.getDate() - 1);
+    let start_date_string = date.toISOString().split('T')[0];
+    let end_date_string = new Date().toISOString().split('T')[0];
+    let listHTML = "";
+    var curr_set = curr.join(',')
+    var requestURL = 'https://api.exchangerate.host/fluctuation?start_date=' + start_date_string + '&end_date=' + end_date_string + '&base=USD&symbols='+ curr_set;
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function () {
+        
+        var response = request.response;
+        for (var prop in response.rates) {
+            if (prop != 'USD') {
+                currency = response.rates[prop]
+                if (prop != 'BTC') {
+                    let currencyName = prop;
+                    let startRate = currency.start_rate;
+                    let endRate = currency.end_rate;
+                    let change = currency.change;
+                    if (change < 0) {
+                        color = "red"
+                    } else {
+                        color = "green"
+                    }
+
+                    let date = start_date_string + " to " + end_date_string;
+                    listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currencyName + "</td>"
+                        + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td>"
+                        + "<td class=\"full-width mdl-data-table__cell--non-numeric\">" + date + "</td> </tr>";
+                }
+
+            };
+        };
+        tableRef.innerHTML += listHTML;
+    }
 }

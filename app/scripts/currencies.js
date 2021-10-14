@@ -56,16 +56,31 @@ function getWatchlist(x) {
 
     // get the current row
     let rows = document.querySelectorAll('tr');
-    
+
 
     for (i = 1; i < rows.length; i++) {
         if (x.value == (rows[i].childNodes[1].innerHTML)) {
-            while (watchlistHTML.length <= 5){
-                watchlistHTML += rows[i];
+            if (watchlistHTML.length <= 5) {
+                watchlistHTML.push(x.value);
+                if (typeof (Storage) !== "undefined") {
+                    //Stringify deckInstance to a JSON string
+                    var jsonwatchlistHTML = JSON.stringify(watchlistHTML);
+
+                    //store this JSON string to local storage using the key 
+                    sessionStorage.setItem("key", jsonwatchlistHTML);
+
+                    window.alert("Added successfully");
+
+                }
+                else {
+                    window.alert("Error: localStorage is not supported by current browser.");
+                };
             }
+            console.log(watchlistHTML)
         }
     }
 };
+
 
 function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
