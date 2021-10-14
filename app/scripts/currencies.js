@@ -1,5 +1,5 @@
-
 document.getElementById("getTable").onclick = function () { getTable() };
+
 
 
 function getTable() {
@@ -21,11 +21,11 @@ function getTable() {
 
 
 
-
+        let count = 0;
         for (var prop in response.rates) {
             if (prop != 'USD') {
                 currency = response.rates[prop]
-                if (prop != 'BTC'){
+                if (prop != 'BTC') {
                     let currencyName = prop;
                     let startRate = currency.start_rate;
                     let endRate = currency.end_rate;
@@ -35,13 +35,14 @@ function getTable() {
                     } else {
                         color = "green"
                     }
-                    let date = start_date + " to " + end_date;
+                    count++;
 
 
                     listHTML += "<tr> <td class=\"full-width mdl-data-table__cell--non-numeric\">" + currencyName + "</td>"
                         + "<td class=\"full-width mdl-data-table__cell\">" + startRate + "</td>"
                         + "<td class=\"full-width mdl-data-table__cell\">" + endRate + "</td>"
-                        + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td></tr>";
+                        + "<td class=\"full-width mdl-data-table__cell\"><font color=" + color + ">" + change + "</font></td>"
+                        + "<td class=\"full-width mdl-data-table__cell\"> <input type=\"button\" onclick=\"getWatchlist(this)\"value=" + currencyName + "></td> </tr>";
                 }
 
             };
@@ -50,6 +51,21 @@ function getTable() {
 
     }
 }
+
+function getWatchlist(x) {
+
+    // get the current row
+    let rows = document.querySelectorAll('tr');
+    
+
+    for (i = 1; i < rows.length; i++) {
+        if (x.value == (rows[i].childNodes[1].innerHTML)) {
+            while (watchlistHTML.length <= 5){
+                watchlistHTML += rows[i];
+            }
+        }
+    }
+};
 
 function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;

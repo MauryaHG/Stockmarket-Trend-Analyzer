@@ -1,4 +1,4 @@
-window.onload = function () { getTableOne(),getTableTwo() };
+window.onload = function () { getTableOne(), getTableTwo(), getTableWatchlist };
 
 function sortDataByPercentageChange(data) {
     let sortedData;
@@ -49,7 +49,7 @@ function getTableOne() {
 
         sortDataByPercentageChange(list);
 
-        
+
         j = 0;
         while (j < 5) {
             change = list[j].percentageChange;
@@ -107,7 +107,7 @@ function getTableTwo() {
 
         sortDataByPercentageChange(list);
 
-        
+
         list = list.reverse()
         i = 0;
         while (i < 5) {
@@ -125,4 +125,11 @@ function getTableTwo() {
 
         tableRef.innerHTML += listHTML;
     }
+}
+
+function getTableWatchlist() {
+    var tableRef = document.getElementById('watchlist');
+    console.log(watchlistHTML);
+    tableRef.innerHTML = watchlistHTML;
+
 }

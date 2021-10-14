@@ -1,4 +1,5 @@
 const chk = document.getElementById('chk');
+let watchlistHTML = "";
 
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
