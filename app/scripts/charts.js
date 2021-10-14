@@ -48,11 +48,11 @@ document.getElementById('selectCurrency').addEventListener('change', function() 
             }
           },
           axisY: {
-            prefix: "$"
+            prefix: "PER USD->"
           },
           data: [{
             type: "line",
-            yValueFormatString: "$#,###.##",
+            yValueFormatString: "#,###.##",
             dataPoints : dps1
           }]
         }],
