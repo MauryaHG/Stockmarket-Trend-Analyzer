@@ -78,29 +78,8 @@ document.getElementById('selectCurrencyone').addEventListener('change', function
       dps2.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
     }
     stockChartone.render();
-    trend(dps1)
+    trend(dps1,'trend')
   });
-
-
-  function trend(data) {
-    console.log(data)
-    start_rate = data[0]["y"]
-    end_rate = data[data.length - 1]["y"]
-    console.log(start_rate)
-    console.log(end_rate)
-    if (end_rate / start_rate < 0.99) {
-      console.log(document.getElementById("trend"))
-      document.getElementById("trend").innerHTML = "As we can see, according to the chart, even though there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year."
-      console.log("As we can see, according to the chart, even though there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year.")
-    } if (end_rate / start_rate > 1.01) {
-      document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year."
-      console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year.")
-    } else {
-      document.getElementById("trend").innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.."
-      console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.")
-    }
-  }
-
 
 });
 
@@ -153,5 +132,28 @@ document.getElementById('selectCurrencytwo').addEventListener('change', function
       dps2.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
     }
     stockCharttwo.render();
+    trend(dps1,'trend-two')
   });
 });
+
+
+
+function trend(data,id) {
+  trendId = id
+  console.log(data)
+  start_rate = data[0]["y"]
+  end_rate = data[data.length - 1]["y"]
+  console.log(start_rate)
+  console.log(end_rate)
+  if (end_rate / start_rate < 0.99) {
+    console.log(document.getElementById(trendId))
+    document.getElementById(trendId).innerHTML = "As we can see, according to the chart, even though there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year."
+    console.log("As we can see, according to the chart, even though there has been constant increases and decreases for this currency, it is an overall downwards trend for the whole year.")
+  } if (end_rate / start_rate > 1.01) {
+    document.getElementById(trendId).innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year."
+    console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is an upwards trend for this currency this whole year.")
+  } else {
+    document.getElementById(trendId).innerHTML = "Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.."
+    console.log("Overall for this currency, according to the graph, it indicates that eventhough there has been some increases and decreases, overall it is a constant trend for this currency this whole year since there has not been much overall change.")
+  }
+}

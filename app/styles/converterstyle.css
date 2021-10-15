@@ -10,9 +10,11 @@ body {
     align-items: center;
 }
 .container {
-    width: 450px;
+    position: relative;
+    margin: 5% auto auto auto;
 }
 h3 {
+    text-align:center;
     color: #364547;
     margin-bottom: 0.5em;
 }
