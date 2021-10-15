@@ -6,7 +6,8 @@
 body{
     height: 100vh;
     display: flex;
-    align-items: top;
+    align-items: center;
+    justify-content: center;
 }
 .container .box{
     width: 100%;
@@ -30,25 +31,24 @@ select{
 }
 
 #trend-card{
-    padding-top: 575px;
-    padding-left: 25%;
+    padding-top: 50px;
+    padding-left: 40%;
 }
-.demo-card-wide.mdl-card {
-    width: 512px;
-    
-  }
-  .demo-card-wide > .mdl-card__title {
-    color: rgb(24, 4, 4);
-    height: 176px;
-    
-  }
-  .demo-card-wide > .mdl-card__menu {
-    color: rgb(59, 11, 11);
-  }
 
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('Capture.PNG') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
   .grid-container {
     display: grid;
-    row-gap:  1px;
+    row-gap:  50px;
     height: 100vh;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 500px auto 500px;
   }

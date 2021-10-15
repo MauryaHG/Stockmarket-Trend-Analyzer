@@ -1,4 +1,5 @@
-var stockChart = 0
+var stockChartone = 0
+var stockCharttwo = 0
 const old_date = new Date();
 old_date.setFullYear(old_date.getFullYear() - 1)
 const date_str = old_date.toISOString().substring(0, 10);
@@ -33,7 +34,7 @@ document.getElementById('selectCurrencyone').addEventListener('change', function
   console.log('You selected: ', this.value);
   curr_val = this.value
   var dps1 = [], dps2 = [];
-  stockChart = new CanvasJS.StockChart("chartContainer", {
+  stockChartone = new CanvasJS.StockChart("chartContainer", {
     theme: "light2",
     animationEnabled: true,
     title: {
@@ -76,7 +77,7 @@ document.getElementById('selectCurrencyone').addEventListener('change', function
       dps1.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
       dps2.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
     }
-    stockChart.render();
+    stockChartone.render();
     trend(dps1)
   });
 
@@ -108,7 +109,7 @@ document.getElementById('selectCurrencytwo').addEventListener('change', function
   console.log('You selected: ', this.value);
   curr_val = this.value
   var dps1 = [], dps2 = [];
-  stockChart = new CanvasJS.StockChart("chartContainertwo", {
+  stockCharttwo = new CanvasJS.StockChart("chartContainertwo", {
     theme: "light2",
     animationEnabled: true,
     title: {
@@ -151,6 +152,6 @@ document.getElementById('selectCurrencytwo').addEventListener('change', function
       dps1.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
       dps2.push({ x: new Date(date), y: Number(date_rate[curr_val]) });
     }
-    stockChart.render();
+    stockCharttwo.render();
   });
 });

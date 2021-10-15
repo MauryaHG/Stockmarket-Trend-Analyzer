@@ -6,11 +6,19 @@ if (watchlistHTML == null){
 
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
-	theme = stockChart.get("theme")
+	theme = stockChartone.get("theme")
 	if (theme == "light2"){
-		stockChart.set("theme", "dark2");
+		stockChartone.set("theme", "dark2");
 	} else{
-		stockChart.set("theme", "light2");
+		stockChartone.set("theme", "light2");
 	}
-	stockChart.render();
+	stockChartone.render();
+	
+	theme = stockCharttwo.get("theme")
+	if (theme == "light2"){
+		stockCharttwo.set("theme", "dark2");
+	} else{
+		stockCharttwo.set("theme", "light2");
+	}
+	stockCharttwo.render();
 });
