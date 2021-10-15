@@ -4,3 +4,4 @@ FIT2101documents.docx
 
 Screenshots of project artifacts in ProjectArtifactsScreenshots.docx
 WBA is the work breakdown agreement and even contribution of team members, both signed and accepted through git.
+Sprint 3 file within docs contains the Sprint 3 testing .docx
