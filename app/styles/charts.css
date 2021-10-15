@@ -31,8 +31,8 @@ select{
 }
 
 #trend-card{
-    padding-top: 50px;
-    padding-left: 40%;
+  position: relative;
+  margin: auto;
 }
 
 .demo-card-wide.mdl-card {
@@ -46,9 +46,20 @@ select{
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
-  .grid-container {
-    display: grid;
-    row-gap:  50px;
-    height: 100vh;
-    grid-template-rows: 500px auto 500px;
-  }
+.grid-container {
+  display: grid;
+  row-gap:  50px;
+  height: 100vh;
+  grid-template-rows: 500px auto 500px;
+}
+
+.content{
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 100px;
+  height: 100px;
+}
